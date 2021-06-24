@@ -31,7 +31,7 @@ resource "aws_lb" "test" {
 }
 resource "aws_instance" "my_webserver" {
   ami                    = "ami-0d8d212151031f51c"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.mysecuritygroup.id]
   user_data              = <<EOF
 #!/bin/bash
@@ -45,7 +45,7 @@ EOF
 }
 resource "aws_instance" "myelse_webserver" {
   ami                    = "ami-0d8d212151031f51c"
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.mysecuritygroup.id]
   user_data              = <<EOF
 #!/bin/bash
